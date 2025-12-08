@@ -1,0 +1,47 @@
+/*
+  assets/css/common.css
+*/
+
+/* Define global styles on the body */
+body {
+    /* Set the default font for the entire page */
+    font-family: 'Poppins', sans-serif;
+    /* --- Background Image Styles for Right Side Only --- */
+    background-image: url('../assets/images/investor-background.jpg');
+    background-repeat: no-repeat;
+    background-position: right center; /* Aligns the image to the right and centers it vertically */
+    background-size: contain; /* Added this to ensure the image scales nicely and is fully visible */ 
+    
+}.hero-visual {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 115%;
+  height: 115%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #f9e6cf 0%, #d7c3ad 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-visual::before {
+  left: -45%;
+  clip-path: polygon(0 0, 65% 0, 45% 100%, 0 100%);
+}
+
+.hero-visual::after {
+  left: -15%;
+  clip-path: polygon(35% 0, 100% 0, 100% 100%, 10% 100%);
+}

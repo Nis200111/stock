@@ -1,0 +1,6 @@
+{
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.list.smoothScrolling": true,
+    "liveServer.settings.port": 5501
+}
