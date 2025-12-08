@@ -2191,66 +2191,68 @@
 </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-notice">Access exclusive premium content available only to registered users.</p>
-            <div class="footer-grid">
-                <div class="footer-logo-col">
-                    <div class="footer-logo-container">
-                        <img src="assets/images/speciallogo.png" alt="Stock Media" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <h1 style="display: none;">Stock Media</h1>
-                    </div>
-                    <button class="language-selector">
-                        <i class="fas fa-globe"></i>
-                        English
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
+    <div class="footer-container">
+        <p class="footer-notice">Access exclusive premium content available only to registered users.</p>
+        <div class="footer-grid">
+            <div class="footer-logo-col">
+                <div class="footer-logo-container">
+                    <img src="assets/images/speciallogo.png" alt="Stock Media" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h1 style="display: none;">Stock Media</h1>
                 </div>
-                <div class="footer-col">
-                    <h4>Our company</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press/media</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="images.php">Images</a></li>
-                        <li><a href="#">Video</a></li>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Exclusive Images</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Terms of service</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Cookie preferences</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact us</h4>
-                    <ul>
-                        <li><a href="#">Help center</a></li>
-                    </ul>
-                </div>
+                <button class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    English
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 Stock Media Platform. All rights reserved.</p>
-                <div class="social-icons">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
+            <div class="footer-col">
+                <h4>Our company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press/media</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="images.php">Images</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Exclusive Images</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Cookie preferences</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact us</h4>
+                <ul>
+                    <li><a href="#">Help center</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>© 2025 Stock Media Platform. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Specialstocks" target="_blank"><i class="fab fa-facebook"></i></a>
+                
+                <a href="https://www.instagram.com/special_stocks/" target="_blank"><i class="fab fa-instagram"></i></a>
+                
+                <a href="https://www.linkedin.com/company/109615206" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+                <a href="https://www.youtube.com/@SpecialStocks" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
