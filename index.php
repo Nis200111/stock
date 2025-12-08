@@ -2135,6 +2135,7 @@
                 });
             });
 
+
             // Slider navigation functionality
             const slider = document.getElementById('featured-slider');
             const prevBtn = document.getElementById('slider-prev');
@@ -2143,6 +2144,7 @@
             if (slider && prevBtn && nextBtn) {
                 const slideWidth = 320; // Width of each slide including gap
                 const gap = 24; // Gap between slides
+                
                 
                 prevBtn.addEventListener('click', function() {
                     slider.scrollBy({
@@ -2169,6 +2171,7 @@
                     prevBtn.disabled = isAtStart;
                     nextBtn.disabled = isAtEnd;
                 });
+
                 
                 // Initialize button states
                 slider.dispatchEvent(new Event('scroll'));
