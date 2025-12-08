@@ -269,7 +269,64 @@
         .btn-login:hover {
             background-color: #f3f4f6;
         }
+/* Apply Poppins font to the entire section */
+.trusted-companies-section,
+.trusted-companies-section * {
+    font-family: 'Poppins', sans-serif;
+}
 
+/* Container for the scrolling track */
+.logo-company-slider {
+    overflow: hidden; /* Hide the logos that are outside the visible area */
+    white-space: nowrap; /* Keep all slides on one line */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+    padding: 20px 0;
+    margin: 20px 0;
+    background-color: white; /* Give it a clean background */
+}
+
+/* The element that contains all the logo slides */
+.logo-company-track {
+    display: flex;
+    animation: scroll-logos 40s linear infinite; /* Start the animation */
+}
+
+/* Individual logo wrapper */
+.logo-company-track a {
+    flex-shrink: 0; /* Prevents logos from shrinking */
+    width: 150px; /* Adjust as needed */
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Set a fixed height */
+}
+
+/* Logo image style */
+.logo-company-slide {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%); /* Makes logos look "trusted" and uniform */
+    opacity: 0.6;
+    transition: filter 0.3s, opacity 0.3s;
+}
+
+/* Highlight logo on hover */
+.logo-company-track a:hover .logo-company-slide {
+    filter: grayscale(0%); /* Colorize on hover */
+    opacity: 1;
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0); /* Start at the beginning */
+    }
+    100% {
+        /* Move the track exactly half its width (which is one full set of logos) */
+        transform: translateX(-50%);
+    }
+}
         /* Navigation Links */
         .nav-links {
             display: none;
@@ -1107,7 +1164,129 @@
 
         .btn-see-more:hover {
             background-color: #f3f4f6;
-        }
+        }/* --- Global Font Setup (Use Poppins) --- */
+/* Ensure Poppins is imported in your HTML head:
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> */
+
+.browse-section, 
+.browse-section * {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Image Grid Item Styling --- */
+
+/* The main item container (already in your HTML) */
+.gallery-item {
+    position: relative;
+    /* You may need to define width/height for the grid items here, e.g., using CSS Grid or Flexbox for the .image-grid */
+}
+
+/* --- Hover Overlay Styling --- */
+
+.gallery-hover-overlay {
+    /* Initially hidden and covers the entire image area */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Layout: Use Flexbox to stack title on top and buttons on bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes top content up, bottom content down */
+    
+    /* Background: Semitransparent black gradient for the overlay */
+    background: rgba(0, 0, 0, 0.4);
+    
+    /* Text/Icon Color: White */
+    color: white;
+    padding: 15px; /* Inner padding */
+    
+    /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Show the overlay when the gallery-item is hovered */
+.gallery-item:hover .gallery-hover-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Top Content (Title) --- */
+
+.gallery-hover-top {
+    /* Title container at the top */
+    width: 100%;
+}
+
+.gallery-hover-title {
+    /* Title text styling */
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 1.3;
+    /* Ensure the text stays within two lines if possible (optional) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Bottom Content (Buttons) --- */
+
+.gallery-hover-bottom {
+    /* Button container at the bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align to the bottom edge of the overlay */
+    width: 100%;
+}
+
+/* Save Button Styling (Left button in the image) */
+.gallery-save-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    /* Styling to match the semi-transparent rounded button */
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    color: white; /* Text color inside the button */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 50px; /* Fully rounded corners */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.gallery-save-btn:hover {
+    background: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
+}
+
+/* Cart Button Styling (Right button in the image) */
+.gallery-cart-btn {
+    /* Styling to match the solid red circle button */
+    background: #ff4747; /* Bright red color */
+    color: white;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%; /* Perfect circle */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: background 0.2s;
+}
+
+.gallery-cart-btn:hover {
+    background: #e63e3e; /* Darker red on hover */
+}
 
         /* Featured Section */
         .featured-section {
@@ -1559,6 +1738,7 @@
             .search-by-image-btn {
                 padding: 0.625rem 1rem;
             }
+            
         }
     </style>
 </head>
@@ -1749,155 +1929,85 @@
             </div>
         </section>
                
-        <!-- Browse Section -->
         <section class="browse-section">
-            <div class="browse-container">
-                <h3 class="browse-title">Explore popular and handpicked visuals</h3>
-                
-                <!-- Category Tabs -->
-                <div class="category-tabs">
-                  
-                    <a href="?category=featured-banners&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Autumn</span>
-                    </a>
-                    <a href="?category=system-graphics&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Business</span>
-                    </a>
-                   
-                    <a href="?category=logo-variations&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Fitness</span>
-                    </a>
-                    <a href="?category=marketing-materials&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Portrait</span>
-                    </a>
-                    <a href="?category=logo-variations&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Aerial</span>
-                    </a>
-                    <a href="?category=marketing-materials&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Cityscape</span>
-                    </a>
-                    <a href="?category=logo-variations&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Dance</span>
-                    </a>
-                    <a href="?category=marketing-materials&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Tecchnology</span>
-                    </a>
-                    <a href="?category=marketing-materials&sort=popular" class="category-tab">
-                        <i class="fas fa-search search-icon"></i>
-                        <span>Forest</span>
-                    </a>
-                </div>
-                
-                <!-- Sort Tabs -->
-                <div class="sort-tabs">
-                    <a href="?category=all&sort=featured" class="sort-tab active">
-                    Handpicked content
-                    </a>
-                    <a href="?category=all&sort=popular" class="sort-tab">
-                        Most Popular
-                    </a>
-                </div>
-                
-                <!-- Image Grid -->
-                <div id="imageGrid" class="image-grid">
-                    <!-- Dog Image 1 -->
-                    <a href="exclusive_image_details.php?id=3" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-01.jpeg" alt="Golden Retriever dog playing with a ball" class="loaded" loading="lazy" data-index="0">
-                        <div class="image-overlay">
-                          
-                        </div>  
-                    </a>
-                    
-                    <!-- Dog Image 2 -->
-                    <a href="exclusive_image_details.php?id=9" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-2.png" alt="Siberian Husky with blue eyes" class="loaded" loading="lazy" data-index="3">
-                        <div class="image-overlay">
-                            
-                        </div>
-                    </a>
-                    
-                    <!-- Dog Image 3 -->
-                    <a href="exclusive_image_details.php?id=4" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-3.jpeg" alt="German Shepherd dog in a field" class="loaded" loading="lazy" data-index="1">
-                        <div class="image-overlay">
-                           
-                         </div>
-                    </a>
-                    
-                    <!-- Dog Image 4 -->
-                    <a href="exclusive_image_details.php?id=12" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-4.jpeg" alt="Labrador Retriever playing in water" class="loaded" loading="lazy" data-index="5">
-                        <div class="image-overlay">
-                           
-                        </div>
-                    </a>
-                    
-                    <!-- Dog Image 5 -->
-                    <a href="exclusive_image_details.php?id=10" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-5.jpeg" alt="French Bulldog sitting on a couch" class="loaded" loading="lazy" data-index="6">
-                        <div class="image-overlay">
-                          
-                        </div>
-                    </a>
-                    
-                    <!-- Dog Image 6 -->
-                    <a href="exclusive_image_details.php?id=8" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-6.jpeg" alt="Border Collie herding sheep" class="loaded" loading="lazy" data-index="7">
-                        <div class="image-overlay">
-                          
-                        </div>
-                    </a>
-                    
-                    <!-- Dog Image 7 -->
-                    <a href="exclusive_image_details.php?id=11" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-7.jpeg" alt="Poodle with stylish haircut" class="loaded" loading="lazy" data-index="8">
-                        <div class="image-overlay">
-                            
-                        </div>
-                    </a>
-                    
-                    <!-- Dog Image 8 -->
-                    <a href="exclusive_image_details.php?id=13" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-8.jpeg" alt="Beagle sniffing the ground" class="loaded" loading="lazy" data-index="9">
-                        <div class="image-overlay">
-                          
-                        </div>
-                    </a>
-                    
-                    <!-- Dog Image 9 -->
-                    <a href="exclusive_image_details.php?id=14" class="image-container group">
-                        <div class="skeleton-loader"></div>
-                        <img src="assets/images/dog-13.png" alt="Dachshund running in the park" class="loaded" loading="lazy" data-index="10">
-                        <div class="image-overlay">
-                           
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- See More Button -->
-                <div class="see-more-container">
-                    <a href="search.php?type=exclusive_images" class="btn-see-more">
-                        See More Exclusive Images
-                    </a>
-                </div>
+    <div class="browse-container">
+        <h3 class="browse-title">Explore popular and handpicked visuals</h3>
+        
+        <div class="category-tabs">
+            <a href="?category=featured-banners&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Autumn</span>
+            </a>
+            <a href="?category=system-graphics&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Business</span>
+            </a>
+            <a href="?category=logo-variations&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Fitness</span>
+            </a>
+            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Portrait</span>
+            </a>
+            <a href="?category=logo-variations&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Aerial</span>
+            </a>
+            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Cityscape</span>
+            </a>
+            <a href="?category=logo-variations&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Dance</span>
+            </a>
+            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Technology</span>
+            </a>
+            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+                <i class="fas fa-search search-icon"></i>
+                <span>Forest</span>
+            </a>
+        </div>
+        
+        <div class="sort-tabs">
+            <a href="?category=all&sort=featured" class="sort-tab active">
+            Handpicked content
+            </a>
+            <a href="?category=all&sort=popular" class="sort-tab">
+                Most Popular
+            </a>
+        </div>
+        
+        <div class="relative group cursor-pointer gallery-item rounded-lg overflow-hidden bg-white shadow-md" 
+    onclick="...">
+    <div class="bg-gray-100 relative overflow-hidden">
+        <img src="assets/images/dog-01.jpeg" alt="Dog Image" class="w-full h-72 object-cover">
+        <div class="gallery-hover-overlay">
+            <div class="gallery-hover-top">
+                <div class="gallery-hover-title">A realistic German Shepherd dog on a clean white background,</div>
             </div>
-        </section>
+            <div class="gallery-hover-bottom">
+                <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                    <i class="far fa-heart"></i>
+                    <span>Save</span>
+                </button>
+                <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                    <i class="fa fa-shopping-cart"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="see-more-container">
+            <a href="search.php?type=exclusive_images" class="btn-see-more">
+                See More Exclusive Images
+            </a>
+        </div>
+    </div>
+</section>
          
         <!-- Featured Section -->
         <section class="featured-section">
@@ -1942,16 +2052,85 @@
                 </div>
             </div>
         </section>
-        <section class="creative-guidance-section">
-    <h2>Creative and Marketing Guidance</h2>
 
-    <div class="main-feature-card">
-        <img src="assets/images/bridge.jpeg" alt="Golden Gate Bridge">
-        <div class="main-feature-content">
-            <h3>In The Wild: TurboSquid x House of Kardashian</h3>
-            <p>TurboSquid is the world's premier 3D design resource. In the first installment of Shutterstock's digital series in **The Wild**, watch global creative studio Coffee & TV use TurboSquid's premium 3D models to craft **House of Kardashian's** opening sequence.</p>
+
+        <section class="py-12 bg-gray-50 text-center trusted-companies-section">
+                <span class="text-gray-700 mb-8 block" style="font-size: 20px; font-weight: bold;">Trusted by the world's largest companies</span>
+    
+    <div class="logo-company-slider">
+        <div class="logo-company-track">
+            <a href="https://www.digitustec.com.au/" target="_blank">
+                <img src="assets/images/Digitus.png" alt="Digitus Logo" class="logo-company-slide">
+            </a>
+            <a href="https://thecyol.com/" target="_blank">
+                <img src="assets/images/CYOL.png" alt="CYOL Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.jadetimes.com/" target="_blank">
+                <img src="assets/images/Jadetimes.png" alt="Jadetimes Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.nyfilms.com" target="_blank">
+                <img src="assets/images/NYFIlms.png" alt="NY Films Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.jadetimesuniversity.com/" target="_blank">
+                <img src="assets/images/JadetimesLogo.png" alt="Jadetimes Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.specialbrands.us" target="_blank">
+                <img src="assets/images/SpecialBrands.png" alt="Special Brands Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.specialprinters.us/" target="_blank">
+                <img src="assets/images/SpecialPrinters.png" alt="Special Printers Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.mysticcompasscoach.com/" target="_blank">
+                <img src="assets/images/Mistic.png" alt="Mistic Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.specialgraphics.us" target="_blank">
+                <img src="assets/images/SpecialGraphgics .png" alt="Special Graphics Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.digitustec.com.au/" target="_blank">
+                <img src="assets/images/Digitus.png" alt="Digitus Logo" class="logo-company-slide">
+            </a>
+            <a href="https://thecyol.com/" target="_blank">
+                <img src="assets/images/CYOL.png" alt="CYOL Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.jadetimes.com/" target="_blank">
+                <img src="assets/images/Jadetimes.png" alt="Jadetimes Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.nyfilms.com" target="_blank">
+                <img src="assets/images/NYFIlms.png" alt="NY Films Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.jadetimesuniversity.com/" target="_blank">
+                <img src="assets/images/JadetimesLogo.png" alt="Jadetimes Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.specialbrands.us" target="_blank">
+                <img src="assets/images/SpecialBrands.png" alt="Special Brands Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.specialprinters.us/" target="_blank">
+                <img src="assets/images/specialPrinters.png" alt="Special Printers Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.mysticcompasscoach.com/" target="_blank">
+                <img src="assets/images/Mistic.png" alt="Mistic Logo" class="logo-company-slide">
+            </a>
+            <a href="https://www.specialgraphics.us" target="_blank">
+                <img src="assets/images/SpecialGraphgics .png" alt="Special Graphics Logo" class="logo-company-slide">
+            </a>
         </div>
     </div>
+    
+    <p class="text-gray-700 mt-8 mb-4 text-lg">Need a personalized package for your business?</p>
+    <a href="https://www.specialstocks.us/register.php" class="inline-block px-12 py-3 bg-red-500 text-white rounded-full hover:bg-red-600">Request a Quote</a>
+</section>
+
+
+ <section class="creative-guidance-section">
+        <h2>Creative and Marketing Guidance</h2>
+
+        <div class="main-feature-card">
+            <img src="assets/images/bridge.jpeg" alt="Golden Gate Bridge">
+            <div class="main-feature-content">
+                <h3>In The Wild: TurboSquid x House of Kardashian</h3>
+                <p>TurboSquid is the world's premier 3D design resource. In the first installment of Shutterstock's digital series in **The Wild**, watch global creative studio Coffee & TV use TurboSquid's premium 3D models to craft **House of Kardashian's** opening sequence.</p>
+            </div>
+        </div>
 
     <div class="sub-features-container">
         
