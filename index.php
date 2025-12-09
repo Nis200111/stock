@@ -367,37 +367,28 @@
             font-size: 10px;
             margin-left: 2px;
         }
-
-        /* New Hero Section Styles */
+/*new -hero-section*/
         .new-hero-section {
-            position: relative;
-            min-height: 500px;
-            background: url('resources/bg1.png') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-        }
-
+    position: relative;
+    min-height: 500px;
+    background: #3498db; /* Fallback blue color */
+    background: url('assets/images/sky.jpg') no-repeat center center, #3498db;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
         @media (min-width: 640px) {
             .new-hero-section {
                 min-height: 600px;
             }
         }
 
-        .new-hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
-        }
+     
         /* Link to Poppins font in your HTML <head> section (required) */
 /* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> */
 
@@ -972,6 +963,8 @@
             background: white;
             border-radius: 9999px;
             font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
             border: 1px solid #e5e7eb;
             transition: all 0.3s;
             display: flex;
@@ -1000,7 +993,8 @@
         }
 
         .category-tab i {
-            font-size: 12px;
+            font-size: 14px;
+            margin-right: 6px;
         }
 
         .category-tab .crown-icon {
@@ -1008,7 +1002,7 @@
         }
 
         .category-tab .search-icon {
-            color: #9ca3af;
+            color: #6b7280;
         }
 
         .sort-tabs {
@@ -1036,10 +1030,17 @@
             padding: 12px 0;
             color: #6b7280;
             font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
             white-space: nowrap;
             text-decoration: none;
             border-bottom: 2px solid transparent;
             transition: all 0.3s;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            cursor: pointer;
         }
 
         @media (min-width: 640px) {
@@ -1057,53 +1058,169 @@
             color: #111827;
             border-bottom-color: #000;
             font-weight: 600;
+            font-family: 'Poppins', sans-serif;
         }
 
         .image-grid {
-            display: grid;
+            display: grid !important;
             grid-template-columns: 1fr;
             gap: 16px;
             margin-bottom: 32px;
+            width: 100%;
+            grid-auto-rows: auto;
         }
 
         @media (min-width: 640px) {
             .image-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr) !important;
                 gap: 24px;
             }
         }
 
         @media (min-width: 1024px) {
             .image-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 16px;
             }
         }
 
         .image-container {
             position: relative;
             cursor: pointer;
-            display: block;
+            display: block !important;
             border-radius: 12px;
             overflow: hidden;
-            height: 256px;
+            height: auto;
+            min-height: 250px;
             transition: transform 0.3s;
+            background-color: #f3f4f6;
+            width: 100%;
+        }
+        
+        /* Different heights for different image positions to create masonry effect */
+        .image-container:nth-child(1),
+        .image-container:nth-child(4),
+        .image-container:nth-child(7),
+        .image-container:nth-child(10) {
+            height: 350px;
+            min-height: 350px;
+        }
+        
+        .image-container:nth-child(2),
+        .image-container:nth-child(5),
+        .image-container:nth-child(8),
+        .image-container:nth-child(11) {
+            height: 300px;
+            min-height: 300px;
+        }
+        
+        .image-container:nth-child(3),
+        .image-container:nth-child(6),
+        .image-container:nth-child(9),
+        .image-container:nth-child(12) {
+            height: 320px;
+            min-height: 320px;
+        }
+        
+        @media (min-width: 1024px) {
+            .image-container:nth-child(1) {
+                height: 380px;
+                min-height: 380px;
+            }
+            
+            .image-container:nth-child(2) {
+                height: 320px;
+                min-height: 320px;
+            }
+            
+            .image-container:nth-child(3) {
+                height: 360px;
+                min-height: 360px;
+            }
+            
+            .image-container:nth-child(4) {
+                height: 300px;
+                min-height: 300px;
+            }
+            
+            .image-container:nth-child(5) {
+                height: 340px;
+                min-height: 340px;
+            }
+            
+            .image-container:nth-child(6) {
+                height: 320px;
+                min-height: 320px;
+            }
+            
+            .image-container:nth-child(7) {
+                height: 330px;
+                min-height: 330px;
+            }
+            
+            .image-container:nth-child(8) {
+                height: 360px;
+                min-height: 360px;
+            }
+            
+            .image-container:nth-child(9) {
+                height: 310px;
+                min-height: 310px;
+            }
+            
+            .image-container:nth-child(10) {
+                height: 350px;
+                min-height: 350px;
+            }
+            
+            .image-container:nth-child(11) {
+                height: 340px;
+                min-height: 340px;
+            }
+            
+            .image-container:nth-child(12) {
+                height: 320px;
+                min-height: 320px;
+            }
         }
 
         .image-container:hover {
             transform: scale(1.02);
         }
 
-        .skeleton-loader {
+        .skeleton-loader {      
             display: none;
         }
 
         .image-container img {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block !important;
+            z-index: 1;
+            visibility: visible !important;
+            opacity: 1 !important;
         }
+        
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block !important;
+        }
+        
+        #handpicked-content {
+            min-height: 400px;
+        }
+        
+        #handpicked-content .image-grid > * {
+            display: block !important;
+            visibility: visible !important;
+        }
+        
 
         .image-overlay {
             position: absolute;
@@ -1159,6 +1276,8 @@
             color: #374151;
             text-decoration: none;
             font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
             transition: all 0.3s;
         }
 
@@ -1168,9 +1287,24 @@
 /* Ensure Poppins is imported in your HTML head:
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> */
 
-.browse-section, 
+        .browse-section, 
 .browse-section * {
     font-family: 'Poppins', sans-serif;
+}
+
+.browse-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111827;
+}
+
+@media (min-width: 640px) {
+    .browse-title {
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
 }
 
 /* --- Image Grid Item Styling --- */
@@ -1183,7 +1317,7 @@
 
 /* --- Hover Overlay Styling --- */
 
-.gallery-hover-overlay {
+        .gallery-hover-overlay {
     /* Initially hidden and covers the entire image area */
     position: absolute;
     top: 0;
@@ -1207,6 +1341,45 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease; /* Smooth fade-in effect */
+    z-index: 2;
+}
+
+.gallery-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.gallery-content.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.gallery-content.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#handpicked-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#handpicked-content .image-grid {
+    display: grid !important;
+    visibility: visible !important;
+}
+
+#handpicked-content .image-container {
+    display: block !important;
+    visibility: visible !important;
+}
+
+#popular-content.hidden {
+    display: none !important;
+    visibility: hidden !important;
 }
 
 /* Show the overlay when the gallery-item is hovered */
@@ -1222,11 +1395,12 @@
     width: 100%;
 }
 
-.gallery-hover-title {
+        .gallery-hover-title {
     /* Title text styling */
-    font-size: 1.1em;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.3;
+    font-family: 'Poppins', sans-serif;
     /* Ensure the text stays within two lines if possible (optional) */
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1246,7 +1420,7 @@
 }
 
 /* Save Button Styling (Left button in the image) */
-.gallery-save-btn {
+        .gallery-save-btn {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1258,8 +1432,9 @@
     border: none;
     border-radius: 50px; /* Fully rounded corners */
     cursor: pointer;
-    font-size: 1em;
+    font-size: 14px;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     transition: background 0.2s;
 }
 
@@ -1724,7 +1899,19 @@
             .new-hero-section {
                 min-height: 500px;
                 padding: 60px 20px;
-            }
+            }new-hero-section {
+    position: relative;
+    min-height: 500px;
+    background: url('assets/images/skyjpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
 
             .hero-title {
                 font-size: 1.75rem;
@@ -1802,106 +1989,107 @@
     </header>
 
     <main>
-        <!-- NEW HERO SECTION -->
-        <section class="new-hero-section" role="banner" aria-label="Hero Section">
-            <div class="hero-content">
-                <h1 class="hero-title">One library, millions of ways to tell your story</h1>
-                
-                <div class="hero-categories">
-                    <div class="hero-category-item">
+       
+      <!-- NEW HERO SECTION -->
+<section class="new-hero-section" role="banner" aria-label="Hero Section">
+    <div class="hero-content">
+        <h1 class="hero-title">One library, millions of ways to tell your story</h1>
+        
+        <!-- Categories -->
+        <div class="hero-categories">
+            <div class="hero-category-item">
+                <i class="far fa-image"></i>
+                <span>Images</span>
+            </div>
+            <div class="hero-category-item">
+                <i class="fa fa-video"></i>
+                <span>Video</span>
+            </div>
+            <div class="hero-category-item">
+                <i class="far fa-newspaper"></i>
+                <span>Editorial</span>
+            </div>
+            <div class="hero-category-item">
+                <i class="fas fa-music"></i>
+                <span>Music</span>
+            </div>
+            <div class="hero-category-item">
+                <i class="fa fa-volume-up"></i>
+                <span>Sound effects</span>
+            </div>
+            <div class="hero-category-item">
+                <i class="far fa-file-alt"></i>
+                <span>Templates</span>
+            </div>
+            <div class="hero-category-item">
+                <i class="fa fa-robot"></i>
+                <span>AI generator</span>
+            </div>
+        </div>
+        
+        <!-- Search Section -->
+        <div class="search-container">
+           
+            
+            <div class="search-dropdown">
+                <button type="button" id="dropdownToggle" class="search-dropdown-btn">
+                    <i class="far fa-image"></i>
+                    <span id="dropdownLabel">All images</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="dropdownMenu" class="search-dropdown-menu">
+                    <a href="https://www.specialstocks.us/index.php" class="search-dropdown-item">
                         <i class="far fa-image"></i>
-                        <span>Images</span>
-                    </div>
-                    <div class="hero-category-item">
-                        <i class="fa fa-video"></i>
-                        <span>Video</span>
-                    </div>
-                    <div class="hero-category-item">
-                        <i class="far fa-newspaper"></i>
-                        <span>Editorial</span>
-                    </div>
-                    <div class="hero-category-item">
+                        All images
+                    </a>
+                    <a href="https://www.specialstocks.us/video.php" class="search-dropdown-item">
+                        <i class="fas fa-video"></i>
+                        Video
+                    </a>
+                    <a href="https://www.specialstocks.us/search.php" class="search-dropdown-item">
                         <i class="fas fa-music"></i>
-                        <span>Music</span>
-                    </div>
-                    <div class="hero-category-item">
-                        <i class="fa fa-volume-up"></i>
-                        <span>Sound effects</span>
-                    </div>
-                    <div class="hero-category-item">
-                        <i class="far fa-file-alt"></i>
-                        <span>Templates</span>
-                    </div>
-                    <div class="hero-category-item">
-                        <i class="fa fa-robot"></i>
-                        <span>AI generator</span>
-                    </div>
-                </div>
-                
-                <div class="search-container">
-                    <div class="search-dropdown">
-                        <button type="button" id="dropdownToggle" class="search-dropdown-btn">
-                            <i class="far fa-image"></i>
-                            <span id="dropdownLabel">All images</span>
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
-                        <div id="dropdownMenu" class="search-dropdown-menu">
-                            <a href="https://www.specialstocks.us/index.php" class="search-dropdown-item">
-                                <i class="far fa-image"></i>
-                                All images
-                            </a>
-                            <a href="https://www.specialstocks.us/video.php" class="search-dropdown-item">
-                                <i class="fas fa-video"></i>
-                                Video
-                            </a>
-                            <a href="https://www.specialstocks.us/search.php" class="search-dropdown-item">
-                                <i class="fas fa-music"></i>
-                                Music
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <form action="https://www.specialstocks.us/search.php" method="GET" class="search-form" role="search" aria-label="Search stock media">
-                        <label for="search-input" class="sr-only">Search for stock photos, videos, and assets</label>
-                        <input type="text" id="search-input" name="q" placeholder="Start your next project" aria-label="Search for stock photos, videos, and creative assets" class="search-input">
-                        <button type="submit" class="search-submit" aria-label="Search">
-                            <i class="fas fa-search" aria-hidden="true"></i>
-                        </button>
-                    </form>
-                    
-                    <a href="https://www.specialstocks.us/search.php" class="search-by-image-btn">
-                        <i class="fas fa-camera"></i>
-                        <span class="search-by-image-text">Search by image</span>
-                        <span class="search-by-image-text-mobile">Image search</span>
+                        Music
                     </a>
                 </div>
-                
-                <div class="trending-topics">
-                    <span class="mr-2">Trending:</span>
-                    <span class="trending-topic mr-2">dogs,</span>
-                    <span class="trending-topic mr-2">happy anniversary,</span>
-                    <span class="trending-topic mr-2">apple clipart,</span>
-                    <span class="trending-topic mr-2">emoji,</span>
-                    <span class="trending-topic mr-2">brain clipart,</span>
-                    <span class="trending-topic">love</span>
-                </div>
             </div>
             
-            <div class="photo-credit">
-                <i class="far fa-image"></i>
-                <span class="photo-credit-text">The night sky filled with...</span>
-                <span class="photo-credit-text-mobile">Night sky...</span>
-                <span class="text-xs">Photo by Craig Taylor Photography</span>
-            </div>
+            <!-- Search Form -->
+            <form action="https://www.specialstocks.us/search.php" method="GET" class="search-form" role="search" aria-label="Search stock media">
+                <label for="search-input" class="sr-only">Search for stock photos, videos, and assets</label>
+                <input type="text" id="search-input" name="q" placeholder="Search for images, video, music..." aria-label="Search for stock photos, videos, and creative assets" class="search-input">
+                <button type="submit" class="search-submit" aria-label="Search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
             
-            <div class="geometric-shapes">
-                <svg viewBox="0 0 100 100" class="w-full h-full">
-                    <polygon points="50,10 30,90 70,90" fill="black" opacity="0.6"></polygon>
-                    <polygon points="25,15 10,90 40,90" fill="black" opacity="0.4"></polygon>
-                    <polygon points="75,20 60,90 90,90" fill="black" opacity="0.5"></polygon>
-                </svg>
-            </div>
-        </section>
+            <!-- Search by Image Button -->
+            <a href="https://www.specialstocks.us/search.php" class="search-by-image-btn">
+                <i class="fas fa-camera"></i>
+                <span class="search-by-image-text">Search by image</span>
+                <span class="search-by-image-text-mobile">Image search</span>
+            </a>
+        </div>
+        
+        <!-- Trending Topics -->
+        <div class="trending-topics">
+            <span class="mr-2">Trending:</span>
+            <span class="trending-topic mr-2">dogs,</span>
+            <span class="trending-topic mr-2">happy anniversary,</span>
+            <span class="trending-topic mr-2">apple clipart,</span>
+            <span class="trending-topic mr-2">emoji,</span>
+            <span class="trending-topic mr-2">brain clipart,</span>
+            <span class="trending-topic">love</span>
+        </div>
+    </div>
+    
+    <!-- Photo Credit -->
+    <div class="photo-credit">
+        <i class="far fa-image"></i>
+        <span class="photo-credit-text">The night sky filled with...</span>
+        <span class="photo-credit-text-mobile">Night sky...</span>
+        <span class="text-xs">Photo by Craig Taylor Photography</span>
+    </div>
+</section>
         
         <!-- New Stories Section (Replaces Collection Section) -->
         <section class="stories-section">
@@ -1928,85 +2116,304 @@
                 </div>
             </div>
         </section>
-               
+
+
+        
         <section class="browse-section">
-    <div class="browse-container">
-        <h3 class="browse-title">Explore popular and handpicked visuals</h3>
+            <div class="browse-container">
+        
+        <h2 class="browse-title">
+            Explore popular and handpicked visuals
+        </h2>
         
         <div class="category-tabs">
-            <a href="?category=featured-banners&sort=popular" class="category-tab">
+            <a href="?category=autumn&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Autumn</span>
             </a>
-            <a href="?category=system-graphics&sort=popular" class="category-tab">
+            <a href="?category=business&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Business</span>
             </a>
-            <a href="?category=logo-variations&sort=popular" class="category-tab">
+            <a href="?category=fitness&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Fitness</span>
             </a>
-            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+            <a href="?category=portrait&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Portrait</span>
             </a>
-            <a href="?category=logo-variations&sort=popular" class="category-tab">
+            <a href="?category=aerial&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Aerial</span>
             </a>
-            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+            <a href="?category=cityscape&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Cityscape</span>
             </a>
-            <a href="?category=logo-variations&sort=popular" class="category-tab">
+            <a href="?category=dance&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Dance</span>
             </a>
-            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+            <a href="?category=technology&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Technology</span>
             </a>
-            <a href="?category=marketing-materials&sort=popular" class="category-tab">
+            <a href="?category=forest&sort=popular" class="category-tab">
                 <i class="fas fa-search search-icon"></i>
                 <span>Forest</span>
             </a>
         </div>
         
         <div class="sort-tabs">
-            <a href="?category=all&sort=featured" class="sort-tab active">
-            Handpicked content
-            </a>
-            <a href="?category=all&sort=popular" class="sort-tab">
+            <button id="tab-handpicked" class="sort-tab active" onclick="switchGalleryTab(event, 'handpicked')">
+                Handpicked content
+            </button>
+            <button id="tab-popular" class="sort-tab" onclick="switchGalleryTab(event, 'popular')">
                 Most Popular
-            </a>
+            </button>
+        </div>
+        
+        <div id="handpicked-content" class="gallery-content active" style="display: block !important; visibility: visible !important;">
+            <div class="image-grid" style="display: grid !important;">
+                <!-- Row 1 -->
+                <div class="image-container gallery-item">
+                    <img src="assets/images/dog-01.jpeg" alt="German Shepherd dog jumping">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A realistic German Shepherd dog on a clean white background</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public8.jpeg" alt="Black and white photo collage">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A photograph of a black and white photo collage</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public.jpeg" alt="German Shepherd lying down">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A photograph of a young German Shepherd</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public 2.jpeg" alt="Dog lying on back">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A photograph of a playful dog</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public4.jpeg" alt="Golden Retriever running">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A joyful Golden Retriever running</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public5.jpeg" alt="Labrador with food">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A yellow Labrador Retriever with food</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 3 -->
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public6.jpeg" alt="Poodle puppy">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A light brown poodle puppy</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public3.jpeg" alt="Labrador with hat and sweater">
+                    <div class="image-overlay"></div>
+                    <div style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.5); color: white; padding: 8px 12px; border-radius: 4px; font-size: 14px; font-weight: 500; font-family: 'Poppins', sans-serif;">
+                        A photograph of a cheerful Labrador Retriever
+                    </div>
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A cheerful Labrador Retriever wearing a hat and sweater</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/serve_public7.jpeg" alt="Poodle with food">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A poodle dog with food bowl</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 4 -->
+                <div class="image-container gallery-item">
+                    <img src="assets/images/dog-3.jpeg" alt="Labrador with hat">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A yellow Labrador Retriever with accessories</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/dog-4.jpeg" alt="German Shepherd in snow">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A German Shepherd running in snow</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container gallery-item">
+                    <img src="assets/images/dog-5.jpeg" alt="Cat sitting">
+                    <div class="gallery-hover-overlay">
+                        <div class="gallery-hover-top">
+                            <div class="gallery-hover-title">A fluffy gray and white cat</div>
+                        </div>
+                        <div class="gallery-hover-bottom">
+                            <button class="gallery-save-btn" onclick="event.stopPropagation();">
+                                <i class="far fa-heart"></i>
+                                <span>Save</span>
+                            </button>
+                            <button class="gallery-cart-btn" onclick="event.stopPropagation();">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
-        <div class="relative group cursor-pointer gallery-item rounded-lg overflow-hidden bg-white shadow-md" 
-    onclick="...">
-    <div class="bg-gray-100 relative overflow-hidden">
-        <img src="assets/images/dog-01.jpeg" alt="Dog Image" class="w-full h-72 object-cover">
-        <div class="gallery-hover-overlay">
-            <div class="gallery-hover-top">
-                <div class="gallery-hover-title">A realistic German Shepherd dog on a clean white background,</div>
-            </div>
-            <div class="gallery-hover-bottom">
-                <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                    <i class="far fa-heart"></i>
-                    <span>Save</span>
-                </button>
-                <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                    <i class="fa fa-shopping-cart"></i>
-                </button>
+        <div id="popular-content" class="gallery-content hidden">
+            <div class="image-grid">
+                <p class="text-center text-gray-500 py-10" style="grid-column: 1 / -1; font-family: 'Poppins', sans-serif;">Popular content will load here.</p>
             </div>
         </div>
-    </div>
-</div>
+        
         <div class="see-more-container">
-            <a href="search.php?type=exclusive_images" class="btn-see-more">
-                See More Exclusive Images
+            <a href="search.php?type=exclusive_images" class="btn-see-more" style="font-family: 'Poppins', sans-serif;">
+                See More Images
             </a>
         </div>
-    </div>
+    </div>
 </section>
          
         <!-- Featured Section -->
@@ -2358,6 +2765,35 @@
                 slider.dispatchEvent(new Event('scroll'));
             }
         });
+        
+        // Gallery tab switching function
+        function switchGalleryTab(event, tabName) {
+            event.preventDefault();
+            
+            // Hide all gallery content
+            const allContent = document.querySelectorAll('.gallery-content');
+            allContent.forEach(content => {
+                content.classList.remove('active');
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            const allTabs = document.querySelectorAll('.sort-tab');
+            allTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected content
+            const selectedContent = document.getElementById(tabName + '-content');
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+                selectedContent.classList.add('active');
+            }
+            
+            // Add active class to clicked tab
+            const clickedTab = event.target;
+            clickedTab.classList.add('active');
+        }
     </script>
     
 </body>
