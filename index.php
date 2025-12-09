@@ -1442,6 +1442,26 @@
     background: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
 }
 
+.gallery-save-btn i,
+.gallery-save-btn i.fa-regular,
+.gallery-save-btn i.fa-heart {
+    color: white !important;
+    font-size: 14px !important;
+    display: inline-block !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro" !important;
+}
+
+/* Ensure Font Awesome regular weight is loaded */
+.gallery-save-btn .fa-regular::before {
+    font-weight: 400 !important;
+}
+
 /* Cart Button Styling (Right button in the image) */
 .gallery-cart-btn {
     /* Styling to match the solid red circle button */
@@ -1461,6 +1481,26 @@
 
 .gallery-cart-btn:hover {
     background: #e63e3e; /* Darker red on hover */
+}
+
+.gallery-cart-btn i,
+.gallery-cart-btn i.fa-solid,
+.gallery-cart-btn i.fa-shopping-cart {
+    color: white !important;
+    font-size: 18px !important;
+    display: inline-block !important;
+    font-style: normal !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro" !important;
+}
+
+/* Ensure Font Awesome solid weight is loaded for cart icon */
+.gallery-cart-btn .fa-solid::before {
+    font-weight: 900 !important;
 }
 
         /* Featured Section */
@@ -2185,11 +2225,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2203,11 +2243,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2221,11 +2261,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2240,11 +2280,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2258,11 +2298,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2276,11 +2316,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2295,11 +2335,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2317,11 +2357,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2335,11 +2375,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2354,11 +2394,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2372,11 +2412,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
@@ -2390,11 +2430,11 @@
                         </div>
                         <div class="gallery-hover-bottom">
                             <button class="gallery-save-btn" onclick="event.stopPropagation();">
-                                <i class="far fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                                 <span>Save</span>
                             </button>
                             <button class="gallery-cart-btn" onclick="event.stopPropagation();">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa-solid fa-shopping-cart"></i>
                             </button>
                         </div>
                     </div>
